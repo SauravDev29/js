@@ -2,6 +2,9 @@
 // there the two types of it :- (1) Primitive and (2) Non-Primitive
 
 // Primitive /call  by Value
+  
+// primitive are immutable values
+
 
 /*
 7 Types : STRING , NUMBER , BOOLEAN ,NULL , UNDEFINED , SYMBOL, BigInt

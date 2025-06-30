@@ -7,7 +7,7 @@
 // at that time
 // NODE BUN DENO are runtime environment that run on v8 engine 
  
-/// EKMA international manages it , TC39 manages it.  members are goggle , microsoft , mozilla , microsoft
+/// ECMA international manages it , TC39 manages it.  members are goggle , microsoft , mozilla , microsoft
 // node is open source ,    V8 engine was fastest at that time and was nonblocking event 
 
 
