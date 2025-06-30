@@ -67,3 +67,20 @@ console.log(arr.length);                      // Length → 2 (number of element
 
 //Shallow Copy	Copies top-level references only	
 //Deep Copy	Recursively copies all nested levels
+
+                         //.slice
+// Returns a shallow copy of a portion of an array — does not modify the original.
+
+// const arr = [0, 1, 2, 3, 4];
+// const sliced = arr.slice(1, 4);     // [1, 2, 3]
+// console.log(arr);                   // [1, 2, 3, 4, 5]  original untouched
+
+// array.slice(startIndex, endIndex)   // endIndex is NOT included
+
+                         //.splice
+
+// Changes the original array by removing, replacing, or adding elements.
+
+// const arr = [1, 2, 3, 4, 5];
+// const removed = arr.splice(1, 2);   // removes 2 elements at index 1 → [2, 3]
+// console.log(arr);                   // [1, 4, 5]  original changed                         
