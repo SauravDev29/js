@@ -1,51 +1,68 @@
-// String('saurav') → creates a primitive string: 'saurav'
+"use strict";
 
-// new String('saurav') → creates a String object, a wrapper around the string
-//so
+// 🔍 STRING — Primitive vs Object
 
-typeof 'saurav' // 'string'
-typeof new String('saurav') // 'object'
+// 🔤 Primitive string
+console.log(typeof 'saurav');            // "string"
 
-'saurav' === new String('saurav') // false (primitive vs object)
+// 🧱 Object string (wrapper)
+console.log(typeof new String('saurav')); // "object"
 
+// ⚖️ Comparison
+console.log('saurav' === new String('saurav')); // false (type mismatch)
+console.log('saurav' == new String('saurav'));  // true (value match only)
 
 const s1 = 'hello';
 const s2 = new String('hello');
 
-console.log(s1 == s2);  // true (value comparison)
-console.log(s1 === s2); // false (type + value, primitive vs object)
+console.log(s1 == s2);   // true
+console.log(s1 === s2);  // false
 
+// 🧠 Primitive strings are more performant — always prefer them unless object needed
 
+//////////////////////////////////////////
+// 🛠️ STRING METHODS — Must-Know Arsenal //
+//////////////////////////////////////////
 
-console.log('hello'.length);               // 5 → length of the string
+// 🔢 Length
+console.log('hello'.length);            // 5
 
-console.log('saurav'.charAt(2));           // 'u' → char at index 2
+// 🔍 Character access
+console.log('saurav'.charAt(2));        // 'u'
 
-console.log('saurav'.indexOf('a'));        // 1 → first occurrence of 'a'
+// 🧭 Index searches
+console.log('saurav'.indexOf('a'));     // 1 → first 'a'
+console.log('banana'.lastIndexOf('a')); // 5 → last 'a'
 
-console.log('banana'.lastIndexOf('a'));    // 5 → last occurrence of 'a'
+// ✅ Substring checks
+console.log('code'.includes('od'));       // true
+console.log('hello'.startsWith('he'));    // true
+console.log('world'.endsWith('ld'));      // true
 
-console.log('code'.includes('od'));        // true → contains 'od'
+// ✂️ Slice and Substring
+console.log('abcdef'.substring(2, 5));    // 'cde' → from index 2 to 4
+console.log('abcdef'.slice(-3));          // 'def' → last 3 characters
 
-console.log('hello'.startsWith('he'));     // true → starts with 'he'
+// 🔠 Case conversion
+console.log('abc'.toUpperCase());         // 'ABC'
+console.log('ABC'.toLowerCase());         // 'abc'
 
-console.log('world'.endsWith('ld'));       // true → ends with 'ld'
+// 🧼 Whitespace cleanup
+console.log('  hi  '.trim());             // 'hi'
 
-console.log('abcdef'.substring(2, 5));     // 'cde' → from index 2 to 4
+// 🔁 Replace
+console.log('hat'.replace('h', 'c'));     // 'cat' → first occurrence only
 
-console.log('abcdef'.slice(-3));           // 'def' → last 3 characters
+// 🪓 Split
+console.log('a,b,c'.split(','));          // ['a', 'b', 'c']
 
-console.log('abc'.toUpperCase());          // 'ABC' → upper case
+// 🔁 Repeat
+console.log('hi'.repeat(3));              // 'hihihi'
 
-console.log('ABC'.toLowerCase());          // 'abc' → lower case
+// ➕ Concat
+console.log('hi'.concat(' there'));       // 'hi there'
 
-console.log(' hi '.trim());                // 'hi' → removes leading/trailing spaces 
-
-console.log('hat'.replace('h','c'));       // 'cat' → replaces first 'h' with 'c'
-
-console.log('a,b,c'.split(','));           // ['a','b','c'] → splits by ','
-
-console.log('hi'.repeat(3));               // 'hihihi' → repeats 3 times
-
-console.log('hi'.concat(' there'));        // 'hi there' → appends ' there'
+// 🔥 Pro Tips:
+// - `replaceAll()` replaces *all* matches (ES2021+)
+// - `match()`, `search()`, `padStart()`, `padEnd()` — great for formatting and regex
 

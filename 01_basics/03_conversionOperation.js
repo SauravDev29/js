@@ -1,42 +1,64 @@
-let score = "24and"
+"use strict";
 
-// console.log(typeof score);
-// console.log(typeof score);
+// 🔄 TYPE CONVERSIONS in JavaScript
 
-let valueInNumber = Number(score)
-// console.log(typeof valueInNumber);
-// console.log(valueInNumber);
+let score = "24and";
 
+// 🔍 Type before conversion
+console.log(typeof score); // 🧵 string
 
-// "33" -> 33
-// "33abc"-> NaN
-// true -> 1 ; false -> 0
+// 🔁 Convert to Number
+let valueInNumber = Number(score);
+console.log(typeof valueInNumber); // 🔢 number
+console.log(valueInNumber);        // ❌ NaN (Not a Number – invalid numeric string)
 
-let isLoggedIn = 1
+// ⚠️ Some type conversion examples:
+console.log(Number("33"));     // ✅ 33 (valid numeric string)
+console.log(Number("33abc"));  // ❌ NaN (invalid mixed string)
+console.log(Number(true));     // ✅ 1
+console.log(Number(false));    // ✅ 0
 
-let booleanIsLoggedIn = Boolean(isLoggedIn)
+// ✅ BOOLEAN Conversion
+let isLoggedIn = 1;
+let booleanIsLoggedIn = Boolean(isLoggedIn);
+console.log(typeof booleanIsLoggedIn); // 🔁 boolean
+console.log(booleanIsLoggedIn);        // ✅ true
 
-// console.log(typeof booleanIsLoggedIn);
-// console.log(booleanIsLoggedIn);
+// Truthy and Falsy 🔑
+// ✅ 1 → true
+// ❌ "" → false
+// ✅ "saurav" → true
+// ❌ 0 → false
+// ❌ null, undefined, NaN → all treated as false
 
-// 1-> true;
-// "" -> false
-
-let someNumber = 33 
-
+// 🔁 Convert to String
+let someNumber = 33;
 let stringNumber = String(someNumber);
+console.log(stringNumber);         // "33"
+console.log(typeof stringNumber);  // 🧵 string
 
-// console.log(stringNumber);
-// console.log(typeof stringNumber);
+// ******************************************
+// ⚔️ OPERATIONS in JavaScript
+// ******************************************
 
-// **************** Operations ***************
+let value = 3;
+let negValue = -value;
+console.log(negValue);             // -3
+console.log(typeof negValue);      // 🔢 number
 
-let value= 3 
-let negValue = -value
-// console.log(negValue);
-// console.log(typeof negValue);
+// 🔥 Type Coercion Examples
 
-// strings could be added 
-// string + number -> string 
+// 🧵 String + Number → String (concatenation)
+console.log("1" + 32 + 3);  // "1323"
+// Why? → Left to right: "1" + 32 = "132" → "132" + 3 = "1323"
 
-console.log("1" +32 +3 );
+// 🔢 Number + Number + String → String (at end)
+console.log(1 + 2 + "3");   // "33"
+// 1 + 2 = 3 → 3 + "3" = "33" (string wins if it's last)
+
+// 🔍 Some more coercion examples:
+console.log("5" - 2);       // 3   (JS converts "5" to number)
+console.log("5" * 2);       // 10
+console.log("5" / 2);       // 2.5
+console.log("5" % 2);       // 1
+console.log("five" * 2);    // NaN (invalid string)
